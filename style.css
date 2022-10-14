@@ -1,0 +1,291 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --roxo: hsla(218, 17%, 62%, 1);
+  --lilás: hsla(275, 18%, 79%, 1);
+  --azul: hsla(274, 84%, 12%, 1);
+}
+
+body{
+  text-align: center;
+
+  background: #E5E5E5;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main{
+  background: var(--roxo);
+
+  width: 38.4rem;
+  height: 27.9rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main div{
+  background-image: url(imagens/logo.png);
+  background-size: cover;
+
+  width: 13.7rem;
+  height: 13.7rem;
+
+  margin: 3.2rem 0;
+}
+
+h1{
+  color: white;
+  font-family: 'Staatliches', cursive;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+
+  width: 100%;
+
+  background: var(--lilás);
+
+  padding: 0.8rem 0 0.7rem 0;
+}
+
+p#desktop{
+  display: none;
+}
+
+p{
+  color: var(--azul);
+  font-family: 'Palanquin', sans-serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  text-align: center;
+
+  width: 30.5rem;
+  height: 7.5rem;
+
+  margin: 1.4rem 4.3rem 6.3rem;
+}
+
+section{
+  margin-bottom: 6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.6rem;
+}
+
+section div.caixa-extra{
+  display: none;
+}
+
+div{
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+div img{
+  object-fit: cover;
+
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 0.95;
+
+  animation-name: down-top;
+  animation-duration: 700ms;
+}
+
+div img:hover{
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+h2{
+  color: var(--azul);
+  font-family: 'Staatliches';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+
+  background: #FEEAFA;
+
+  width: 11.2rem;
+  height: 3.5rem;
+  right: 0;
+
+  border-radius: 2rem;
+  margin: 1.6rem;
+
+  position: absolute;
+
+  z-index: 1;
+
+  animation-name: top-down;
+  animation-duration: 700ms;
+}
+
+footer{
+  display: none;
+}
+
+@keyframes down-top{
+  0%{
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes top-down{
+  0%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 900px){
+  body{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  header{
+    background: var(--roxo);
+
+    width: 37.7rem;
+    height: 100vh;
+  }
+
+  main{
+    width: 37.7rem;
+    height: 30.1rem;
+  }
+
+  main div{
+    background-image: url(imagens/logo3.png);
+
+    width: 21.47rem;
+    height: 16.7rem;
+
+    margin: 3.2rem 8.1rem;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  h1{
+    font-weight: 400;
+    font-size: 48px;
+
+    width: 377px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p{
+    display: none;
+  }
+
+  p#desktop{
+    display: block;
+
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    line-height: 2rem;
+
+    background: var(--roxo);
+
+    width: 27.5rem;
+    height: 26.2rem;
+
+    margin: 3.2rem 4.8rem 12.5rem 5.4rem;
+
+    z-index: 1;
+  }
+
+  section{
+    margin: 6.4rem 8.1rem 12.4rem 9.8rem;
+
+    display: grid;
+    align-items: start;
+    gap: 3.2rem;
+
+    grid-template-areas: "A B C";
+  }
+
+  section div.caixa-extra{
+    display: flex;
+  }
+
+  section div{
+    width: 22rem;
+  }
+
+  section div:nth-child(2){
+    height: 15rem;
+  }
+
+  section div:nth-child(5){
+    margin-top: 14rem;
+  }
+
+  h2{
+    display: none;
+  }
+
+  footer{
+    display: block;
+
+    color: hsla(232, 17%, 35%, 1);
+    font-family: "Open Sans";
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.8rem;
+    text-align: center;
+
+    width: 59.2rem;
+    height: 2.8rem;
+
+    position: absolute;
+    bottom: 4.6rem;
+    left: 54.1rem;
+  }
+
+  footer a{
+    color: hsla(232, 17%, 35%, 1);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
